@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Admin - Tech Week</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <header class='topbar'>
+        <div class='brand'>ADMIN TECHWEEK.</div>
+    </header>
+
+    <main class='conteudo'>
+        <div class='container'>
+            <h1>Painel Administrativo</h1>
+            <div id="login-form">
+                <h2>Login</h2>
+                <input type="password" id="admin-password" placeholder="Senha">
+                <button id="login-btn">Entrar</button>
+            </div>
+            <div id="admin-panel" style="display: none;">
+                <h2>Inscrições</h2>
+                <div id="participantes-list"></div>
+                <h2>Palestrantes</h2>
+                <div id="palestrantes-list"></div>
+                <h2>Projetos</h2>
+                <div id="projetos-list"></div>
+                <h2>Presenças</h2>
+                <div id="presencas-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const loginBtn = document.getElementById('login-btn');
+        const passwordInput = document.getElementById('admin-password');
+        const loginForm = document.getElementById('login-form');
+        const adminPanel = document.getElementById('admin-panel');
+
+        loginBtn.addEventListener('click', () => {
+            if (passwordInput.value === 'admin123') { // Senha simples para demo
+                loginForm.style.display = 'none';
+                adminPanel.style.display = 'block';
+                carregarDados();
+            } else {
+                alert('Senha incorreta!');
+            }
+        });
+
+        function carregarDados() {
+            const participantes = JSON.parse(localStorage.getItem('participantes') || '[]');
+            const palestrantes = JSON.parse(localStorage.getItem('palestrantes') || '[]');
+            const projetos = JSON.parse(localStorage.getItem('projetos') || '[]');
+
+            document.getElementById('participantes-list').innerHTML = participantes.map(p => `<p>${p.nome} - ${p.ra}</p>`).join('');
+            document.getElementById('palestrantes-list').innerHTML = palestrantes.map(p => `<p>${p.nome} - ${p.tema}</p>`).join('');
+            document.getElementById('projetos-list').innerHTML = projetos.map(p => `<p>${p.nomeProjeto} - ${p.descProjeto}</p>`).join('');
+            const presencas = JSON.parse(localStorage.getItem('presencas') || '[]');
+            document.getElementById('presencas-list').innerHTML = presencas.map(p => `<p>${p.palestra} - ${p.timestamp}</p>`).join('');
+        }
+    </script>
+</body>
+</html>

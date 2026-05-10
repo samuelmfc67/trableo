@@ -1,0 +1,409 @@
+* {
+    margin: 0; /* remove margens padrão do navegador */
+    padding: 0; /* remove espaçamento interno padrão */
+    box-sizing: border-box; /* inclui padding e border na largura total */
+}
+
+.topbar {
+    display: flex; /* posiciona logo e menu em linha */
+    justify-content: space-between; /* separa conteúdo nas extremidades */
+    align-items: center; /* alinha o conteúdo verticalmente */
+    background: #000; /* define o fundo da barra superior */
+    padding: 20px 40px; /* define o espaço interno do cabeçalho */
+    color: #fff; /* define a cor do texto do cabeçalho */
+    position: sticky; /* fixa o topo enquanto o usuário rola */
+    top: 0; /* fixa no topo da página */
+    z-index: 100; /* garante que fique acima do conteúdo */
+}
+
+.brand {
+    font-size: 1.5rem; /* define o tamanho do texto da marca */
+    font-weight: bold; /* define o peso da fonte como negrito */
+    letter-spacing: 2px; /* define o espaçamento entre letras */
+}
+
+.menu {
+    display: flex; /* coloca os links do menu na mesma linha */
+    gap: 30px; /* define a distância entre os itens do menu */
+}
+
+.menu a {
+    color: #fff; /* define a cor do texto dos links */
+    text-decoration: none; /* remove o sublinhado dos links */
+    font-weight: bold; /* define peso mais forte para os links */
+    letter-spacing: 1px; /* cria espaçamento entre letras */
+    transition: opacity 0.3s; /* suaviza a transição do hover */
+}
+
+.menu a:hover {
+    opacity: 0.7; /* reduz a opacidade ao passar o mouse */
+}
+
+body {
+    font-family: Arial, sans-serif; /* define fonte legível e neutra */
+    background: #000; /* define a cor de fundo da página */
+    color: #cfcfcf; /* define a cor do texto */
+    display: flex; /* usa flexbox para estruturar a página */
+    flex-direction: column; /* organiza os elementos em coluna */
+    min-height: 100vh; /* garante que o body ocupe toda a altura da tela */
+}
+
+
+.conteudo {
+    flex: 1; /* faz o conteúdo crescer para preencher o espaço */
+    padding: 40px; /* cria espaçamento interno */
+    display: flex; /* usa flexbox no conteúdo */
+    flex-direction: column; /* organiza os elementos em coluna */
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center; /* centraliza verticalmente e horizontalmente */
+}
+
+.container-main {
+    width: 100%; /* ocupa toda a largura disponível */
+    max-width: 900px; /* limita o tamanho máximo */
+    display: flex; /* usa flexbox para organizar */
+    flex-direction: column; /* organiza em coluna */
+    gap: 8px; /* espaçamento menor entre elementos */
+    align-items: center; /* centraliza o conteúdo interno */
+}
+
+.buttons-row {
+    display: flex; /* coloca os botões em linha */
+    gap: 14px; /* espaçamento entre os botões */
+    margin-top: 24px; /* separa os botões do container principal */
+    flex-wrap: wrap; /* permite quebrar linha em telas menores */
+    justify-content: center; /* centraliza os botões */
+}
+
+.btn {
+    background: #000; /* fundo preto */
+    color: #fff; /* texto branco */
+    border: 1px solid #000; /* borda preta */
+    padding: 18px 30px; /* tamanho do botão */
+    text-transform: uppercase; /* letras maiúsculas */
+    font-weight: 700; /* texto em negrito */
+    letter-spacing: 0.1em; /* espaçamento entre letras */
+    cursor: pointer; /* cursor de clique */
+    transition: all 0.3s ease; /* transição suave */
+    min-width: 180px; /* largura mínima */
+    border-radius: 0; /* deixa o botão quadrado */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    color: #0a1f44; /* texto azul escuro no hover */
+    background: #fff;
+    border-color: #0a1f44;
+}
+
+.btn:focus {
+    outline: 2px solid #0a1f44; /* foco acessível */
+    outline-offset: 2px;
+}
+
+/* Estilos específicos para cada botão */
+.btn.inscricao {
+    background: linear-gradient(45deg, #0a1f44, #1e3a8a);
+    border: 1px solid #0a1f44;
+}
+
+.btn.inscricao:hover {
+    background: linear-gradient(45deg, #1e3a8a, #0a1f44);
+    color: #fff;
+}
+
+.btn.palestrante {
+    background: linear-gradient(45deg, #dc2626, #b91c1c);
+    border: 1px solid #dc2626;
+}
+
+.btn.palestrante:hover {
+    background: linear-gradient(45deg, #b91c1c, #dc2626);
+    color: #fff;
+}
+
+.btn.projeto {
+    background: linear-gradient(45deg, #16a34a, #15803d);
+    border: 1px solid #16a34a;
+}
+
+.btn.projeto:hover {
+    background: linear-gradient(45deg, #15803d, #16a34a);
+    color: #fff;
+}
+
+.btn.confirm-presenca {
+    background: #f59e0b;
+    color: #000;
+    border: 1px solid #f59e0b;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+
+.btn.confirm-presenca:hover {
+    background: #d97706;
+}
+
+.modal-overlay {
+    position: fixed; /* fixa a sobreposição na tela */
+    inset: 0; /* ocupa toda a tela */
+    background: rgba(0, 0, 0, 0.65); /* fundo escuro translúcido */
+    display: flex; /* centraliza o modal */
+    align-items: center; /* verticalmente */
+    justify-content: center; /* horizontalmente */
+    z-index: 200; /* acima de todo conteúdo */
+}
+
+.modal-overlay.hidden {
+    display: none; /* esconde a sobreposição */
+}
+
+.modal-box {
+    width: min(500px, calc(100% - 40px)); /* largura adaptável */
+    background: #fff; /* fundo branco */
+    color: #111; /* texto escuro */
+    padding: 32px; /* espaçamento interno */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25); /* sombra do modal */
+    position: relative; /* para posicionar fechar */
+}
+
+.modal-close {
+    position: absolute; /* posiciona o botão no canto */
+    top: 16px;
+    right: 16px;
+    border: none;
+    background: transparent;
+    color: #111;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-box h2 {
+    margin-bottom: 16px;
+}
+
+.modal-box p {
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+#inscricao-form, #palestrante-form, #projeto-form {
+    display: grid;
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#inscricao-form label, #palestrante-form label, #projeto-form label {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+#inscricao-form input, #palestrante-form input, #palestrante-form textarea, #projeto-form input, #projeto-form textarea {
+    width: 100%;
+    min-height: 52px;
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+#inscricao-form input:focus, #palestrante-form input:focus, #palestrante-form textarea:focus, #projeto-form input:focus, #projeto-form textarea:focus {
+    border-color: #0a1f44;
+    outline: none;
+    box-shadow: 0 0 5px rgba(10, 31, 68, 0.3);
+}
+
+#inscricao-form textarea, #palestrante-form textarea, #projeto-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.error-message {
+    color: #b00020;
+    font-size: 0.9rem;
+    min-height: 1.2rem;
+    margin-top: 4px;
+}
+
+.modal-box button[type="submit"] {
+    background: linear-gradient(45deg, #0a1f44, #1e3a8a);
+    color: #fff;
+    border: none;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.modal-box button[type="submit"]:hover {
+    background: linear-gradient(45deg, #1e3a8a, #0a1f44);
+}
+
+.Titulocenter {
+    font-size: 4.7rem; /* aumenta muito o tamanho do título */
+    text-align: center; /* centraliza o texto horizontalmente */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* adiciona sombreamento ao texto */
+    font-weight: bold; /* deixa o título em negrito */
+    margin: 10px 0; /* adiciona espaço menor acima e abaixo */
+}
+ 
+.ano-data {
+    display: flex; /* alinha o ano e data lado a lado */
+    justify-content: center; 
+    align-items: center; /* alinha verticalmente */
+    margin: 10px 0; /* espaçamento menor */
+    gap: 6px; /* pouca distância entre 2K26 e data */
+       transform: translate(70px, -20px);
+}
+
+.ano {
+    font-size: 4.7rem; /* tamanho igual ao Titulocenter */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* sombreamento */
+    font-weight: bold; /* negrito */
+    margin: 0; /* remove margem padrão */
+}
+
+.data {
+    font-size: 1.2rem; /* tamanho menor para a data */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* sombreamento */
+    font-weight: bold; /* negrito */
+    margin: 0; /* remove margem padrão */
+     transform: translateY(-20px); /* sobe um pouco */
+}
+
+#contador {
+  font-size: 2rem; /* aumenta o contador */
+  font-weight: bold;
+   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* sombreamento */
+    transform: translateY(15px);
+   position: relative;
+  right: 115px; /* move sem empurrar ninguém */
+}
+
+#tsparticles {
+    position: fixed; /* mantém o fundo de partículas fixo */
+    width: 100%; /* ocupa a largura total da janela */
+    height: 100%; /* ocupa a altura total da janela */
+    z-index: -1; /* fica atrás de todo o conteúdo */
+    background: linear-gradient(135deg, #0a1f44, #0d2c6b); /* degradê de fundo */
+}
+
+.footer {
+    background: #000; /* fundo preto para o rodapé */
+    color: #fff; /* texto branco no rodapé */
+    padding: 40px; /* espaçamento interno do rodapé */
+    text-align: center; /* centraliza o conteúdo */
+    margin-top: auto; /* empurra o rodapé para baixo */
+    min-height: 300px; /* altura mínima do rodapé */
+    display: flex; /* usa flexbox no rodapé */
+    align-items: flex-start; /* alinha o conteúdo no topo do rodapé */
+    justify-content: center; /* centraliza horizontalmente */
+}
+
+.footer-title {
+    font-size: 1.5rem; /* tamanho da fonte do título do rodapé */
+    font-weight: bold; /* deixa o título em negrito */
+    letter-spacing: 2px; /* espaça as letras do título */
+}
+
+.section {
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #cfcfcf;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.programacao-grid, .palestrantes-grid, .projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.dia, .palestrante, .projeto {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.faq {
+    margin-top: 20px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-item h4 {
+    margin-bottom: 5px;
+}
+
+iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu {
+        margin-top: 10px;
+    }
+    .buttons-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn {
+        width: 100%;
+    }
+    .programacao-grid, .palestrantes-grid, .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+    .Titulocenter {
+        font-size: 3rem;
+    }
+    .ano {
+        font-size: 3rem;
+    }
+}
+
+img.logo-patrocinador {
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 20px auto 0;
+}
