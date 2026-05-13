@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Admin - Tech Week</title>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='admin.css'>
+</head>
+<body class="admin-page">
+    <div id='tsparticles-admin'></div>
+    <header class='topbar'>
+        <div class='brand'>ADMIN TECHWEEK.</div>
+    </header>
+
+    <main class='conteudo'>
+        <div class='container'>
+            <h1 class="admin-title">Bem-Vindo</h1>
+            <h2 class="admin-subtitle">ADMIN</h2>
+            <div id="login-form">
+                <h2>Login</h2>
+                <input type="password" id="admin-password" placeholder="Senha">
+                <button id="login-btn">Entrar</button>
+            </div>
+            <div id="admin-panel" style="display: none;">
+                <h2>Inscrições</h2>
+                <div id="participantes-list"></div>
+                <h2>Palestrantes</h2>
+                <div id="palestrantes-list"></div>
+                <h2>Projetos</h2>
+                <div id="projetos-list"></div>
+                <h2>Presenças</h2>
+                <div id="presencas-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src='https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js'></script>
+    <script src='js/admin.js'></script>
+</body>
+</html>

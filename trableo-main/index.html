@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Tech Week</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <!-- Header / Menu -->
+    <header class='topbar'>
+        <div class='brand'>TECHWEEK.</div>
+        <button class='hamburger' id='hamburger' aria-label='Menu'>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class='menu' id='menu'>
+            <a href='#evento'>EVENTO</a>
+            <a href='#programacao'>PROGRAMAÇÃO</a>
+            <a href='#palestrantes'>PALESTRANTES</a>
+            <a href='#projetos'>PROJETOS</a>
+            <a href='#localizacao'>LOCALIZAÇÃO</a>
+            <a href='#contato'>CONTATO</a>
+            <a href='admin.html'>ADMIN</a>
+        </nav>
+    </header>
+
+    
+    <div id='tsparticles'></div>
+
+
+    <main class='conteudo'>
+        <div class='container-main'>
+            <h1 class="Titulocenter">WEEKTECH</h1>
+            <h1 class="Titulocenter">LONDRINA</h1>
+            <div class="ano-data">
+                <h1 class="ano">2K26</h1>
+                <h2 class="data">Começa em:</h2>
+                <div id="contador"></div>
+            </div>
+        </div>
+
+        <div class="buttons-row">
+            <button class="btn inscricao">INSCREVA-SE</button>
+            <button class="btn palestrante">QUERO PALESTRAR</button>
+            <button class="btn projeto">APRESENTAR PROJETO</button>
+        </div>
+    </main>
+
+    <section id='evento' class='section'>
+        <div class='container'>
+            <h2>Sobre o Evento</h2>
+            <p>A Tech Week Londrina é um evento dedicado à tecnologia, inovação e aprendizado. Junte-se a nós para palestras, workshops e apresentações de projetos.</p>
+        </div>
+    </section>
+
+    <section id='programacao' class='section'>
+        <div class='container'>
+            <h2>Programação</h2>
+            <div class='programacao-grid'>
+                <div class='dia'>
+                    <h3>Dia 1 - 01/06/2026</h3>
+                    <p>9:00 - Abertura</p>
+                    <p>10:00 - Palestra 1</p>
+                    <button class="btn confirm-presenca" data-palestra="Palestra 1">Confirmar Presença</button>
+                    <p>11:00 - Coffee Break</p>
+                    <p>14:00 - Apresentações de Projetos</p>
+                </div>
+                <div class='dia'>
+                    <h3>Dia 2 - 02/06/2026</h3>
+                    <p>9:00 - Palestra 2</p>
+                    <button class="btn confirm-presenca" data-palestra="Palestra 2">Confirmar Presença</button>
+                    <p>10:00 - Workshop</p>
+                    <p>11:00 - Coffee Break</p>
+                    <p>14:00 - Encerramento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id='palestrantes' class='section'>
+        <div class='container'>
+            <h2>Palestrantes</h2>
+            <div class='palestrantes-grid'>
+                <div class='palestrante'>
+                    <h3>Palestrante 1</h3>
+                    <p>Tema: Inovação em TI</p>
+                    <p>Currículo: Especialista em...</p>
+                </div>
+                <div class='palestrante'>
+                    <h3>Palestrante 2</h3>
+                    <p>Tema: Desenvolvimento Web</p>
+                    <p>Currículo: Desenvolvedor sênior...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id='projetos' class='section'>
+        <div class='container'>
+            <h2>Projetos</h2>
+            <div class='projetos-grid'>
+                <div class='projeto'>
+                    <h3>Projeto 1</h3>
+                    <p>Descrição: Aplicativo inovador...</p>
+                </div>
+                <div class='projeto'>
+                    <h3>Projeto 2</h3>
+                    <p>Descrição: Sistema de IA...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id='localizacao' class='section'>
+        <div class='container'>
+            <h2>Localização</h2>
+            <div class='map-wrapper'>
+                <iframe src="https://maps.google.com/maps?q=Av.%20Santa%20M%C3%B4nica%20450&t=&z=16&ie=UTF8&iwloc=&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class='localizacao-text'>
+                    <p>Universidade Unicesumar - Londrina</p>
+                    <p>Endereço: Av. Santa Mônica, 450</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id='contato' class='section'>
+        <div class='container'>
+            <h2>Contato e FAQ</h2>
+            <h3>FAQ</h3>
+            <div class='faq'>
+                <div class='faq-item'>
+                    <h4>Como me inscrever?</h4>
+                    <p>Clique em "INSCREVA-SE" e preencha o formulário.</p>
+                </div>
+                <div class='faq-item'>
+                    <h4>Posso apresentar um projeto?</h4>
+                    <p>Sim, use o botão "APRESENTAR PROJETO".</p>
+                </div>
+                <div class='faq-item'>
+                    <h4>Como confirmar presença?</h4>
+                    <p>Ao final de cada palestra, haverá um botão para confirmar.</p>
+                </div>
+            </div>
+            <p>Para mais dúvidas, entre em contato: contato@techweek.com</p>
+        </div>
+    </section>
+
+    <!-- Modal overlays -->
+    <div class="modal-overlay hidden" id="modal-register">
+        <div class="modal-box">
+            <button class="modal-close" type="button" aria-label="Fechar">×</button>
+            <h2>INSCREVA-SE</h2>
+            <p>Inscreva-se como participante.</p>
+            <form id="inscricao-form" novalidate>
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" required>
+                <label for="ra">RA</label>
+                <input id="ra" name="ra" type="text" required>
+                <label for="curso">Curso</label>
+                <input id="curso" name="curso" type="text" required>
+                <label for="serie">Série</label>
+                <input id="serie" name="serie" type="text" required>
+                <label class="checkbox-label" for="coffee">
+                    <span>Participar do Coffee Break</span>
+                    <input type="checkbox" id="coffee">
+                </label>
+                <p class="error-message" id="register-error"></p>
+                <button class="btn" type="submit">INSCREVER-SE</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="modal-palestrante">
+        <div class="modal-box">
+            <button class="modal-close" type="button" aria-label="Fechar">×</button>
+            <h2>QUERO PALESTRAR</h2>
+            <p>Inscreva-se como palestrante.</p>
+            <form id="palestrante-form" novalidate>
+                <label for="p-nome">Nome</label>
+                <input id="p-nome" name="nome" type="text" required>
+                <label for="telefone">Telefone</label>
+                <input id="telefone" name="telefone" type="tel" required>
+                <label for="p-email">E-mail</label>
+                <input id="p-email" name="email" type="email" required>
+                <label for="tema">Tema da Palestra</label>
+                <input id="tema" name="tema" type="text" required>
+                <label for="curriculo">Currículo</label>
+                <textarea id="curriculo" name="curriculo" required></textarea>
+                <label for="briefing">Briefing</label>
+                <textarea id="briefing" name="briefing" required></textarea>
+                <label for="tempo">Tempo (40-60 min)</label>
+                <input id="tempo" name="tempo" type="number" min="40" max="60" required>
+                <p class="error-message" id="palestrante-error"></p>
+                <button class="btn" type="submit">INSCREVER-SE</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="modal-projeto">
+        <div class="modal-box">
+            <button class="modal-close" type="button" aria-label="Fechar">×</button>
+            <h2>APRESENTAR PROJETO</h2>
+            <p>Inscreva seu projeto.</p>
+            <form id="projeto-form" novalidate>
+                <label for="pr-nome">Nome</label>
+                <input id="pr-nome" name="nome" type="text" required>
+                <label for="pr-ra">RA</label>
+                <input id="pr-ra" name="ra" type="text" required>
+                <label for="nome-projeto">Nome do Projeto</label>
+                <input id="nome-projeto" name="nomeProjeto" type="text" required>
+                <label for="desc-projeto">Descrição do Projeto</label>
+                <textarea id="desc-projeto" name="descProjeto" required></textarea>
+                <p class="error-message" id="projeto-error"></p>
+                <button class="btn" type="submit">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class='footer'>
+        <div class='footer-content'>
+            <div class='footer-title'>PATROCINADORES</div>
+            <div class='patrocinadores-grid'>
+                <div class='patrocinador-item'>
+                  <a href="https://inscricoes.unicesumar.edu.br/?gclsrc=aw.ds&&utm_content=&utm_term=faculdade%20unicesumar&utm_campaign=U-EAD-GG-ONG-CAP-GRA-CONV-PADR-BRAN-BR-PESQ-CPC&utm_source=google&utm_medium=cpc&hsa_acc=7334726990&hsa_cam=10024765118&hsa_grp=103896843271&hsa_ad=559280208121&hsa_src=g&hsa_tgt=kwd-308544426425&hsa_kw=faculdade%20unicesumar&hsa_mt=p&hsa_net=google&hsa_ver=3&gad_source=1&gad_campaignid=10024765118&gbraid=0AAAAADiEd5bl3e49_rNfBqyW77VWOk4Um&gclid=EAIaIQobChMIk8CI3v60lAMVfF5IAB0twzvmEAAYASAAEgJF8vD_BwE">  <img src="imagens/unicesumar-logo.png" alt="Logo Unicesumar" class="logo-patrocinador"></a>
+                </div>
+                <div class='patrocinador-item'>
+                    <a href="https://www.instagram.com/restaurantecaco/"><img src="imagens/patrocinador caco.jpg" alt="Patrocinador Caco" class="logo-patrocinador"></a>
+                </div>
+                <div class='patrocinador-item'>
+                    <img src="imagens/patrocinador custodio.jpg" alt="Patrocinador Custódio" class="logo-patrocinador">
+                </div>
+                <div class='patrocinador-item'>
+                    <a href="https://www.instagram.com/restaurantevitorios/"><img src="imagens/patrocinador vitorios.jpeg" alt="Patrocinador Vitorius" class="logo-patrocinador"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src='https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js'></script>
+    <script src='java.js'></script>
+</body>
+</html>
